@@ -13,7 +13,7 @@
   </head>
   <body>
     <script type="application/processing"> 
-	  //Tully Jones-Wilkins, 5/13/20: 
+	  	//Tully Jones-Wilkins, 5/13/20: 
 		Star[] stars;
 		int numCircles = 50;
 
@@ -40,7 +40,6 @@
 		 if((ofs==offset) || (ofs==0))
 		  {
 		   ofs_v=0-ofs_v;
-
 		  }
 		  strokeWeight(6);
 		  drawLine(200+ofs,#DB028C,#FFAE34);
@@ -48,11 +47,7 @@
 		  strokeWeight(1);
 		  drawLine(198+ofs,0,0); 
 		  frame();
-
 		}
-
-
-
 		int stair = 100;
 		float noiseScale = 0.2;
 		int offset = 300;
@@ -80,10 +75,6 @@
 			float n = noise( x/70.0 + frameCount/400.0 + y);
 			vertex( x, y0 - boo / (1.0 + pow(x-binc, 4)/ 10e6) * n + noiseVal);
 		    }
-		    println(y0);
-		    //}
-		    //vertex( width, height*2 );
-		    //vertex( 0, height*2 );
 		    vertex(width+10, height+200);
 		    vertex(0, height+220);
 		    vertex(0, height+230);
@@ -155,8 +146,8 @@
 		  }
 		}
     </script>
+    <canvas> </canvas>
     <h1>Series of Covid-19 data driven generative art</h1>
     <h2>Tully Jones-Wilkins, High School Student, The Delta School, Wilson, Arkansas</h2>
-          <canvas> </canvas>
   </body>
 </html>
