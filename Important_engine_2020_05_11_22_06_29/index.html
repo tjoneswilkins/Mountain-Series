@@ -14,149 +14,149 @@
   <body>
     <script type="application/processing"> 
 	  //Tully Jones-Wilkins, 5/13/20: 
-Star[] stars;
-int numCircles = 50;
+		Star[] stars;
+		int numCircles = 50;
 
-void setup(){
-  size(1000,480);
-  //background(0, 0, 20);
-  frameRate(100);
-  //creating array 
-  stars = new Star[numCircles];
-  for (int i=0; i < numCircles; i++) {
-    stars[i] = new Star(random(width/1), random(height/3), random(1, 10));
-  }
-  stars();
-}
-int binc; 
-int ofs =0;
-int ofs_v =1;
+		void setup(){
+		  size(1000,480);
+		  //background(0, 0, 20);
+		  frameRate(100);
+		  //creating array 
+		  stars = new Star[numCircles];
+		  for (int i=0; i < numCircles; i++) {
+		    stars[i] = new Star(random(width/1), random(height/3), random(1, 10));
+		  }
+		  stars();
+		}
+		int binc; 
+		int ofs =0;
+		int ofs_v =1;
 
-void draw(){
-  //translate(0,-200);
-  //creating array 
-// generation of landscape, yint moving
-  ofs+=ofs_v;
- if((ofs==offset) || (ofs==0))
-  {
-   ofs_v=0-ofs_v;
-   
-  }
-  strokeWeight(6);
-  drawLine(200+ofs,#DB028C,#FFAE34);
-  drawLine(202+ofs,#FF6A7E,#FFFA6A);//color
-  strokeWeight(1);
-  drawLine(198+ofs,0,0); 
-  frame();
-   
-}
+		void draw(){
+		  //translate(0,-200);
+		  //creating array 
+		// generation of landscape, yint moving
+		  ofs+=ofs_v;
+		 if((ofs==offset) || (ofs==0))
+		  {
+		   ofs_v=0-ofs_v;
 
+		  }
+		  strokeWeight(6);
+		  drawLine(200+ofs,#DB028C,#FFAE34);
+		  drawLine(202+ofs,#FF6A7E,#FFFA6A);//color
+		  strokeWeight(1);
+		  drawLine(198+ofs,0,0); 
+		  frame();
 
-
-int stair = 100;
-float noiseScale = 0.2;
-int offset = 300;
-
-boolean go = false; 
+		}
 
 
-void drawLine(int y0, color to, color from){ 
-float boo = map(binc, -50, width,100,350);
-if (y0 >= 500){ 
-  go = true; 
-} 
-if (!go){
-  idfk(); 
-  fill(255,4);
-  beginShape();
-  curveVertex(-50,y0);
-  for (int i =0 ; i<width/stair+3;i+=1){
-     float noiseVal = noise(i*noiseScale*(y0*0.06), frameCount*noiseScale); 
-     stroke(lerpColor(from,to,noiseVal));
-     //vertex(i*stair-10,y0+noiseVal*offset);
-       noFill();
-  for ( int y = 360; y < 580; y += 10 ) {
-    for ( float x = 0; x < width; x+=1 ) {
-        float n = noise( x/70.0 + frameCount/400.0 + y);
-        vertex( x, y0 - boo / (1.0 + pow(x-binc, 4)/ 10e6) * n + noiseVal);
-    }
-    println(y0);
-    //}
-    //vertex( width, height*2 );
-    //vertex( 0, height*2 );
-    vertex(width+10, height+200);
-    vertex(0, height+220);
-    vertex(0, height+230);
 
-    endShape(CLOSE);
-      }
-    }
-  }  
-}
+		int stair = 100;
+		float noiseScale = 0.2;
+		int offset = 300;
 
-void idfk(){
-    binc += 10/6; 
-  if (binc > width) { 
-    binc = -200; 
-}
-}
-void frame(){ 
-  int diff = 50; 
-noFill(); 
-stroke(255); 
-beginShape();
-fill(255);
-vertex(0,0);
-vertex(width,0);
-vertex(width,height);
-vertex(0,height);
-vertex(0,0);
-beginContour(); 
-vertex(diff,diff); 
-vertex(diff,height-diff);
-vertex(width-diff,height-diff);
-vertex(width-diff,diff); 
-endContour();
-endShape(CLOSE);
-}
-void stars() {
- background(0, 0, 20);
-  // update and display the circles
-  for (int i=0; i< numCircles; i++) {
-    stars[i].update();
-    stars[i].display();
-  }
-}
-//stars display
-class Star {
-  float x, y, dia;
-  
-  Star(float x, float y, float dia) {
-    this.x =x;
-    this.y =y;
-    this.dia = dia;
-  }
-  void update() {
-    // code for movement here
-    // this is just some random displacement
-    x = x + random(-0.1, 0.1);
-    y = y + random(-0.1, 0.1);
-  }
+		boolean go = false; 
 
-  void display() {
-    // code for drawing the circles
-    //background(0,0,20); 
-    noStroke();
-    //fill(60, 60, 190, 60);
-    fill(60, 60, 230, 60);
-    ellipse(x, y, dia, dia);
-    fill(255); 
-    ellipse(x,y,dia/2,dia/2); 
-  }
-}
+
+		void drawLine(int y0, color to, color from){ 
+		float boo = map(binc, -50, width,100,350);
+		if (y0 >= 500){ 
+		  go = true; 
+		} 
+		if (!go){
+		  idfk(); 
+		  fill(255,4);
+		  beginShape();
+		  curveVertex(-50,y0);
+		  for (int i =0 ; i<width/stair+3;i+=1){
+		     float noiseVal = noise(i*noiseScale*(y0*0.06), frameCount*noiseScale); 
+		     stroke(lerpColor(from,to,noiseVal));
+		     //vertex(i*stair-10,y0+noiseVal*offset);
+		       noFill();
+		  for ( int y = 360; y < 580; y += 10 ) {
+		    for ( float x = 0; x < width; x+=1 ) {
+			float n = noise( x/70.0 + frameCount/400.0 + y);
+			vertex( x, y0 - boo / (1.0 + pow(x-binc, 4)/ 10e6) * n + noiseVal);
+		    }
+		    println(y0);
+		    //}
+		    //vertex( width, height*2 );
+		    //vertex( 0, height*2 );
+		    vertex(width+10, height+200);
+		    vertex(0, height+220);
+		    vertex(0, height+230);
+
+		    endShape(CLOSE);
+		      }
+		    }
+		  }  
+		}
+
+		void idfk(){
+		    binc += 10/6; 
+		  if (binc > width) { 
+		    binc = -200; 
+		}
+		}
+		void frame(){ 
+		  int diff = 50; 
+		noFill(); 
+		stroke(255); 
+		beginShape();
+		fill(255);
+		vertex(0,0);
+		vertex(width,0);
+		vertex(width,height);
+		vertex(0,height);
+		vertex(0,0);
+		beginContour(); 
+		vertex(diff,diff); 
+		vertex(diff,height-diff);
+		vertex(width-diff,height-diff);
+		vertex(width-diff,diff); 
+		endContour();
+		endShape(CLOSE);
+		}
+		void stars() {
+		 background(0, 0, 20);
+		  // update and display the circles
+		  for (int i=0; i< numCircles; i++) {
+		    stars[i].update();
+		    stars[i].display();
+		  }
+		}
+		//stars display
+		class Star {
+		  float x, y, dia;
+
+		  Star(float x, float y, float dia) {
+		    this.x =x;
+		    this.y =y;
+		    this.dia = dia;
+		  }
+		  void update() {
+		    // code for movement here
+		    // this is just some random displacement
+		    x = x + random(-0.1, 0.1);
+		    y = y + random(-0.1, 0.1);
+		  }
+
+		  void display() {
+		    // code for drawing the circles
+		    //background(0,0,20); 
+		    noStroke();
+		    //fill(60, 60, 190, 60);
+		    fill(60, 60, 230, 60);
+		    ellipse(x, y, dia, dia);
+		    fill(255); 
+		    ellipse(x,y,dia/2,dia/2); 
+		  }
+		}
     </script>
-    <canvas></canvas>
     <h1>Series of Covid-19 data driven generative art</h1>
     <h2>Tully Jones-Wilkins, High School Student, The Delta School, Wilson, Arkansas</h2>
+          <canvas></canvas>
   </body>
 </html>
