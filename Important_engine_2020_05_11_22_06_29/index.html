@@ -1,8 +1,7 @@
 <<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <script src="processing.js"></script>
-    <script src="processing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.0/processing.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8">
     <title>sketches</title>
@@ -13,6 +12,114 @@
     
   </head>
   <body>
+    <script type="application/processing"> 
+    // Tully Jones-Wilkins; 5/13/20
+      float binc= 0;
+      float ainc =0; 
+      Table table;
+      int col, row;
+			float elev,xdata;
+			float data;
+			int y0; // sets default val for y 
+// colors 
+
+color[] colors = {
+#9D00FF,#FFFF00,#FF0000,#00FF00,#00FFFF,#FF00FF,
+#CC00FF,#FFFF33,#FD1C03,#00FF33,#099FFF,#FF00CC,#FFFFFF,
+#6E0DD0,#F2EA02,#FF3300,#00FF66,#0062FF,#FF0099,
+#9900FF,#E6FB04,#FF6600,#33FF00,#0033FF,#CC00FF,#FFFFFF,
+//---------------------------------------------
+#9D00FF,#FFFF00,#FF0000,#00FF00,#00FFFF,#FF00FF,#FFFFFF,
+#CC00FF,#FFFF33,#FD1C03,#00FF33,#099FFF,#FF00CC,
+#6E0DD0,#F2EA02,#FF3300,#00FF66,#0062FF,#FF0099,#FFFFFF,
+#9900FF,#E6FB04,#FF6600,#33FF00,#0033FF,#CC00FF,
+};
+
+
+void setup(){ 
+  size(1080,720); 
+  fill(0); 
+  stroke(#FD1C03);
+  strokeWeight(3); 
+  smooth(3);
+  table = loadTable("arkansas copy 2.csv","header");
+}
+void draw(){ 
+  background(0);
+  collu(); // calling data 
+  idfk(); // incrementint the "binc" 
+  
+  int k=0; 
+    if(k == 50){ 
+     k=0; 
+  }
+  for (int y0 = 250; y0 < 600; y0+=7){
+     k++;
+     stroke(colors[k]); 
+     //fill(colors[k],80);
+     lines(y0);  // draw lines, assigns neon  
+     noStroke(); 
+    }
+  
+   
+  frame();   // drawing frame
+}
+void collu(){
+  for (float col = 0; col < table.getColumnCount(); col+= 0.5) {} 
+    TableRow state = table.getRow(0);
+    if (col >= table.getColumnCount()-1){
+      col = 0; 
+    } else {
+      col+= 1; 
+      //println(col);
+    } 
+}
+
+void idfk(){
+    binc += 10/5; 
+  if (binc > width) { 
+    binc = -50; 
+  }
+}
+void frame(){ 
+  int diff = 50; 
+noFill(); 
+stroke(255); 
+beginShape();
+fill(255);
+vertex(0,0);
+vertex(width,0);
+vertex(width,height);
+vertex(0,height);
+vertex(0,0);
+beginContour(); 
+vertex(diff,diff); 
+vertex(diff,height-diff);
+vertex(width-diff,height-diff);
+vertex(width-diff,diff); 
+endContour();
+endShape(CLOSE);
+  
+  
+}
+void lines(float y0){ 
+  float boo = map(binc, -50, width,0,350);
+  float wow = map(binc, width,-50,10,90);
+    beginShape();
+      noFill(); 
+  //for ( int y0 = 170; y0 < 670; y0 += 10 ) {
+    for ( float x = 0; x < width; x+=1 ) {
+        float n = noise( x/wow + frameCount/50.0 + y0);
+        vertex( x, y0 - boo / (1 + pow(x-binc, 4) / 6e6) * n);
+        //vertex(x,1e4);
+  }
+  vertex( width, height*2 );
+  vertex( 0, height*2 );
+
+endShape(); 
+//} 
+}
+    </script>
     <h1>Series of Covid-19 data driven generative art</h1>
     <h2>Tully Jones-Wilkins, High School Student, The Delta School, Wilson, Arkansas</h2>
     <canvas data-processing-sources="framing.pde"></canvas>
