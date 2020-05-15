@@ -7,61 +7,11 @@
     <<body>
       <h1>Processing demo sketch</h1>
       <script type="text/processing">
-        Circle[] circles;
-        int numCircles = 70;
-        int maxDistance;
 
         void setup() {
-          size(1000, 300);
-          smooth();
-
-          // create an array and fill it with circles
-          circles = new Circle[numCircles];
-          for (int i=0; i< numCircles; i++) {
-            circles[i] = new Circle(random(width), random(height), random(2, 10));
-          }
-        }
-
-        void draw() {
-          // clear background
-          background(0, 0, 20);
-         
-          // update and display the circles
-          for (int i=0; i< numCircles; i++) {
-            circles[i].update();
-            circles[i].display();
-          }
-   
-         
-          // look of the lines
-
-        }
-
-        class Circle {
-          float x, y, dia;
-
-          Circle(float x, float y, float dia) {
-            this.x =x;
-            this.y =y;
-            this.dia = dia;
-          }
-
-          void update() {
-            // code for movement here
-            // this is just some random displacement
-            x = x + random(-.1, .1);
-            y = y + random(-.1, .1);
-          }
-
-          void display() {
-            // code for drawing the circles
-            noStroke();
-            fill(60, 60, 190, 60);
-            ellipse(x, y, dia, dia);
-            fill(255);
-            ellipse(x,y,dia/2,dia/2);
-          }
-        }
+          size(300,300);
+          rect(width/2,height/2,50,50); 
+         }
         </script>
         <canvas id="sketch" style ="border: 1px solid black;""></<canvas>
     </body>
