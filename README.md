@@ -37,10 +37,23 @@ After imputting data I wanted to find another medium to convey the data in an as
   vertex( x, y0 - boo / (1 + pow(x-binc, 4) / 6e6) * n);
   
 ```
-Imput that noise and vertex function and equation into a for loop setting variables and line color and you find yourself with the following generation. 
+Imput that noise and vertex function and equation into a for loop, set variables and line color and you find yourself with the following generation. 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pojIA3g3vlw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
+Next I wanted to create a way of conveying the struggles of the virus, the problems behind it, the barries it created. I thought to generate this same function over a looping function. Generating a seemingly random mountain generation than the one before it. 
+```javascript 
+  int k=0; 
+    if(k == 50){ // setting limit for incrementation
+     k=0; 
+  }
+  for (int y0 = 250; y0 < 600; y0+=7){
+     k++; // incrementing colors 
+     stroke(colors[k]); // loops color through lines 
+     lines(y0); // draw lines at different y-axis every loop 
+     noStroke(); 
+    }
+```
+### Independent lines, different colors, different generations all going through a chaotic experience together; alinged. 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/NNe2SFHWiwE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
