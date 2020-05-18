@@ -59,7 +59,9 @@ After aligning the forces of data and generation, through loops, perameters and 
 I implemented a new way of drawing the lines on the page. Instead of one simple function looping, use a function with three perameters all controllable and customizeable. 
 The ```javascript void drawLine(var y0,color to, color from){ ``` function made this possible. 
 whole function: 
+
 ```javascript
+
 void drawLine(int y0, color to, color from){  
 if (y0 >= 550){ 
   go = true; 
@@ -91,7 +93,9 @@ if (!go){
     }
   }  
 }
+
 ```
+
 The next thing I wanted to implement is a vertical loop that allowed for the y axis depreciating increment.
 ```javascript 
 int ofs =0;
