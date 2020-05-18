@@ -6,12 +6,12 @@ This definition is technical, blocky, one dimentional. Data is generally refered
 ###### Data is a tool 
 When combined with other mediums it creates something bigger than the data. It can convey feelings, emotions, and thoughts. Think of the hammer, one dimentional, not many uses, limited creative uses. Combine the hammer with nails, and wood, and you can build a house. 
 
-In this project I had one small, one dimentional data set. The confirmed Covid-19 case numbers for my home state of Arkansas.
+In this project I had a small, one dimentional data set. The confirmed Covid-19 case numbers for my home state of Arkansas.
  ![seechart](https://tjoneswilkins.github.io/Mountain-Series/images/Screen Shot 2020-05-16 at 2.57.14 PM.png)
  
 For my project I combined the tool of data with an creative programing languange called **Processing**. Processing, a depreciating javascript platform was the perfect introduction to programming and creative coding for a newbie like me. Through the large community of artists on the platform it created the prefect environment for asking for help. Learning from others, and iterations of community designs. 
 
-It began with data and statistical alalysis. Consolidating data into simple csv files and starting to introduce them into the processing sketch. 
+It began with data and statistical analysis. Consolidating data into simple csv files and starting to introduce them into the processing sketch. 
 
 ```javascript
 Table table;
@@ -40,7 +40,7 @@ After imputting data I wanted to find another medium to convey the data in an as
 Imput that noise and vertex function and equation into a for loop, set variables and line color and you find yourself with the following generation. 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pojIA3g3vlw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Next I wanted to create a way of conveying the struggles of the virus, the problems behind it, the barries it created. I thought to generate this same function over a looping function. Generating a seemingly random mountain generation than the one before it. 
+Next I wanted to create a way of conveying the struggles of the virus, the problems behind it, the barries it created. I thought to output this same function over a loop. Generating a seemingly random mountain than the one before it. 
 ```javascript 
   int k=0; 
     if(k == 50){ // setting limit for incrementation
@@ -57,8 +57,10 @@ Next I wanted to create a way of conveying the struggles of the virus, the probl
 <iframe width="560" height="315" src="https://www.youtube.com/embed/NNe2SFHWiwE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 After aligning the forces of data and generation, through loops, perameters and a very large color array. I wanted to iterate further, I wanted to create a landscape. 
 I implemented a new way of drawing the lines on the page. Instead of one simple function looping, use a function with three perameters all controllable and customizeable. 
+
 The ```javascript void drawLine(var y0,color to, color from){ ``` function made this possible. 
-whole function: 
+
+entire function: 
 
 ```javascript
 
@@ -140,4 +142,9 @@ class Star {
   }
 }
 ```
+
+And outcomes a mountain generation. 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/B45KWbGnHCI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+customizable color, heigt, intensity, and more. All driven by the __one dimentional__ tool of **data**. 
+
