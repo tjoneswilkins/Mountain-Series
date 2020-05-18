@@ -13,7 +13,7 @@ For my project I combined the tool of data with an creative programing languange
 
 It began with data and statistical alalysis. Consolidating data into simple csv files and starting to introduce them into the processing sketch. 
 
-'''
+```javascript
 Table table;
 
 void setup() {
@@ -30,8 +30,14 @@ void draw() {
       }
     data = table.getInt(0,col); 
   } 
-  '''
-
+```
+After imputting data I wanted to find another medium to convey the data in an asthetically pleasing way. Enter the golden function. 
+```javascript
+  float n = noise( x/wow + frameCount/50.0 + y0);
+  vertex( x, y0 - boo / (1 + pow(x-binc, 4) / 6e6) * n);
+  
+```
+Imput that noise and vertex function and equation into a for loop setting variables and line color and you find yourself with the following generation. 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pojIA3g3vlw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
