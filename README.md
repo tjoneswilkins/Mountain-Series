@@ -12,6 +12,7 @@ In this project I had one small, one dimentional data set. The confirmed Covid-1
 For my project I combined the tool of data with an creative programing languange called **Processing**. Processing, a depreciating javascript platform was the perfect introduction to programming and creative coding for a newbie like me. Through the large community of artists on the platform it created the prefect environment for asking for help. Learning from others, and iterations of community designs. 
 
 It began with data and statistical alalysis. Consolidating data into simple csv files and starting to introduce them into the processing sketch. 
+
 '''
 Table table;
 
@@ -30,7 +31,6 @@ void draw() {
     data = table.getInt(0,col); 
   } 
   '''
-
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pojIA3g3vlw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
