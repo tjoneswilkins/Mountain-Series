@@ -55,6 +55,51 @@ Next I wanted to create a way of conveying the struggles of the virus, the probl
 ```
 ### Independent lines, different colors, different generations all going through a chaotic experience together; alinged. 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/NNe2SFHWiwE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+After aligning the forces of data and generation, through loops, perameters and a very large color array. I wanted to iterate further, I wanted to create a landscape. 
+I implemented a new way of drawing the lines on the page. Instead of one simple function looping, use a function with three perameters all controllable and customizeable. The ```javascript void drawLine(var y0,color to, color from){ ``` function made this possible. 
 
-
+The next thing I wanted to implement is a vertical loop that allowed for the y axis depreciating increment.
+```javascript 
+int ofs =0;
+int ofs_v =1;
+int offset = 300;
+//-------------------------------------
+  ofs+=ofs_v;
+ if((ofs==offset) || (ofs==0))
+  {
+   ofs_v=0-ofs_v;
+   
+  }
+```
+I then needed to implement the **ofs** variable into the drawLine function to allow for simultanoes incrementation. 
+```javascript
+strokeWeight(6);
+  drawLine(200+ofs,#3E0338,#1907ED);// calling drawLine function. //assigning colors 
+  drawLine(202+ofs,#9594AA,#2A0650); // drawing and creating mountains. //assinging different colors 
+  strokeWeight(1); // defining the mountain with black stroke creating shadow and texture effects
+  drawLine(198+ofs,0,0);
+```
+write a star class for aesthetics! 
+```javascript
+//stars display class, way to iterate the same shape over and over, controlled by perameters 
+class Star {
+  float x, y, dia;
+  
+  Star(float x, float y, float dia) {
+    this.x =x;
+    this.y =y;
+    this.dia = dia;
+  }
+  void display() {
+    //code for displaying the circles
+    //background(0,0,20); 
+    noStroke();
+    //fill(60, 60, 190, 60);
+    fill(60, 60, 230, 60);
+    ellipse(x, y, dia, dia);
+    fill(255); 
+    ellipse(x,y,dia/2,dia/2); 
+  }
+}
+```
 <iframe width="560" height="315" src="https://www.youtube.com/embed/B45KWbGnHCI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
