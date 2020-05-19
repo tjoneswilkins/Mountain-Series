@@ -1,7 +1,7 @@
 # Covid-19 Data Driven Generative Art
 ### Tully Jones-Wilkins, High School Student, The Delta School.
 ##### Data: "facts and statistics collected together for refrence or analysis." 
-This definition is technical, blocky, one dimentional. Data is generally refered to as numbers, represententive of something conceptual, or too great to understand without systems of data. However, data can be used for many other things, say when you mix data statistics and literature. That product may be something like an word cloud, or autocomplete. 
+This definition is technical, blocky, one dimentional. Data is generally refered to as numbers, represententive of something conceptual, or too great to understand without systems of data. However, data can be used for many other things, say when you mix data statistics and literature. That product may be something like a word cloud, or autocomplete. 
 ![word cloud](https://tjoneswilkins.github.io/Mountain-Series/images/download.png)
 ###### Data is a tool 
 When combined with other mediums it creates something bigger than the data. It can convey feelings, emotions, and thoughts. Think of the hammer, one dimentional, not many uses, limited creative uses. Combine the hammer with nails, and wood, and you can build a house. 
@@ -9,7 +9,7 @@ When combined with other mediums it creates something bigger than the data. It c
 In this project I had a small, one dimentional data set. The confirmed Covid-19 case numbers for my home state of Arkansas.
  ![seechart](https://tjoneswilkins.github.io/Mountain-Series/images/Screen Shot 2020-05-16 at 2.57.14 PM.png)
  
-For my project I combined the tool of data with an creative programing languange called **Processing**. Processing, a depreciating javascript platform was the perfect introduction to programming and creative coding for a newbie like me. Through the large community of artists on the platform it created the prefect environment for asking for help. Learning from others, and iterations of community designs. 
+I combined the tool of data with an creative programing languange called **Processing**. Processing, a depreciating javascript platform was the perfect introduction to programming and creative coding for a newbie like me. Through the large community of artists on the platform it created the prefect environment for asking for help. Learning from others, and iterations from community designs. 
 
 It began with data and statistical analysis. Consolidating data into simple csv files and starting to introduce them into the processing sketch. 
 
