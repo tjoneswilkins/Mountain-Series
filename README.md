@@ -1,6 +1,6 @@
 # Covid-19 Data Driven Generative Art
 ### Tully Jones-Wilkins, High School Student, The Delta School.
-##### Data: "facts and statistics collected together for refrence or analysis." 
+##### Data: "facts and statistics collected together for reference or analysis." 
 This definition is technical, blocky, one dimensional. Data is generally refered to as numbers, represententive of something conceptual, or too great to understand without systems of data. However, data can be used for many other things, say when you mix data statistics and literature. That product may be something like a word cloud, or autocomplete. 
 ![word cloud](https://tjoneswilkins.github.io/Mountain-Series/images/download.png)
 ###### Data is a tool 
