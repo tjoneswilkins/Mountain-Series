@@ -1,15 +1,11 @@
-# Covid-19 Data Driven Generative Art
+# COVID-19 Data Driven Generative Art 
 ### Tully Jones-Wilkins, High School Student, The Delta School.
 ##### Data: "facts and statistics collected together for reference or analysis." 
-This definition is technical, blocky, one dimensional. Data is generally refered to as numbers, represententive of something conceptual, or too great to understand without systems of data. However, data can be used for many other things, say when you mix data statistics and literature. That product may be something like a word cloud, or autocomplete. 
-![word cloud](https://tjoneswilkins.github.io/Mountain-Series/images/download.png)
-###### Data is a tool 
-When combined with other mediums it creates something bigger than the data. It can convey feelings, emotions, and thoughts. Think of the hammer, one dimensional, not many uses, limited creative uses. Combine the hammer with nails, and wood, and you can build a house. 
 
 In this project I had a small, one dimensional data set. The confirmed Covid-19 case numbers for my home state of Arkansas.
  ![seechart](https://tjoneswilkins.github.io/Mountain-Series/images/Screen Shot 2020-05-16 at 2.57.14 PM.png)
  
-I combined the tool of data with an creative programing languange called **Processing**. Processing, a depreciating javascript platform was the perfect introduction to programming and creative coding for a newbie like me. Through the large community of artists on the platform it created the prefect environment for asking for help. Learning from others, and iterations from community designs. 
+I combined the data set with an creative programing languange called **Processing**. Processing, a depreciating javascript platform was the perfect introduction to programming and creative coding for a beginner like me. Through the large community of artists on the platform it created the prefect environment for asking for help. Learning from others, and iterations from community designs. 
 
 It began with data and statistical analysis. Consolidating data into simple .csv files and starting to introduce them into the processing sketch. 
 
@@ -31,7 +27,7 @@ void draw() {
     data = table.getInt(0,col); 
   } 
 ```
-After inputting data I wanted to find another medium to convey the data in an aesthetically pleasing way. Enter the golden function. 
+After inputting data I was looking for a way to visualize the data. But I was not excited to create a graph or a conventional data visualization. I developed a function that uses mathematical processes to draw a line based on the data set. The function creates a mountain-like design that is critical to visualize the progression of the virus- both the rises and the falls. 
 ```javascript
   float n = noise( x/wow + frameCount/50.0 + y0);
   vertex( x, y0 - boo / (1 + pow(x-binc, 4) / 6e6) * n);
@@ -40,7 +36,7 @@ After inputting data I wanted to find another medium to convey the data in an ae
 Input that noise and vertex function and equation into a for loop, set variables and line color and you find yourself with the following generation. 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pojIA3g3vlw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Next I wanted to create a way of conveying the struggles of the virus, the problems behind it, the barries it created. I thought to output this same function over a loop. Generating a seemingly random mountain than the one before it. 
+Next I wanted to create a collective feeling through the peice. Representing the collective spirit in communities response to the pandemic. 
 ```javascript 
   int k=0; 
     if(k == 50){ // setting limit for incrementation
@@ -53,7 +49,7 @@ Next I wanted to create a way of conveying the struggles of the virus, the probl
      noStroke(); 
     }
 ```
-### Independent lines, different colors, different generations all going through a chaotic experience together; alinged. 
+### Series 2 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/NNe2SFHWiwE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 After aligning the forces of data and generation, through loops, parameters and a very large color array. I wanted to iterate further, I wanted to create a landscape. 
 I implemented a new way of drawing the lines on the page. Instead of one simple function looping, use a function with three parameters all controllable and customizeable. 
@@ -119,7 +115,7 @@ strokeWeight(6);
   strokeWeight(1); // defining the mountain with black stroke creating shadow and texture effects
   drawLine(198+ofs,0,0);
 ```
-write a star class for aesthetics! 
+Write a star class for aesthetics! 
 ```javascript
 //stars display class, way to iterate the same shape over and over, controlled by perameters 
 class Star {
@@ -143,8 +139,7 @@ class Star {
 }
 ```
 
-And outcomes a mountain generation. 
+And outcomes a landscape generation 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/B45KWbGnHCI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-customizable color, height, intensity, and more. All driven by the __one dimensional__ tool of **data**. 
 ![wow](https://tjoneswilkins.github.io/Mountain-Series/images/wow.png)
